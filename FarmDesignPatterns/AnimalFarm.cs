@@ -15,10 +15,7 @@ namespace FarmDesignPatterns
             animals.Add(animal);
         }
 
-        public void BubbleSortAnimalsByName()
-        {
-            animals = animals.OrderBy(a => a.GetType().Name).ToList();
-        }
+       
 
         public void MakeSoundsOfAnimals()
         {
@@ -52,5 +49,24 @@ namespace FarmDesignPatterns
             Console.WriteLine("\nFeeding the animals...");
             Console.WriteLine("The animals have been fed.");
         }
+
+        public void SortAnimals()
+        {
+            int n = animals.Count;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (animals[j].GetType().Name.CompareTo(animals[j + 1].GetType().Name) > 0)
+                    {
+                        
+                        IAnimal temp = animals[j];
+                        animals[j] = animals[j + 1];
+                        animals[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
     }
 }

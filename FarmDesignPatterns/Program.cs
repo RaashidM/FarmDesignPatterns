@@ -17,18 +17,17 @@
             Farm farm = Farm.Instance;
             farm.Greeting();
 
-           
+
             Console.WriteLine("\nBefore sorting:");
             animalFarm.MakeSoundsOfAnimals();
 
-          
-            animalFarm.BubbleSortAnimalsByName();
+            
+            animalFarm.SortAnimals();
 
-         
             Console.WriteLine("\nAfter sorting:");
             animalFarm.MakeSoundsOfAnimals();
 
-          
+
             FarmManager farmManager = new FarmManager();
             Farmer farmer1 = new Farmer("Ahmed");
             Farmer farmer2 = new Farmer("Hassan");
